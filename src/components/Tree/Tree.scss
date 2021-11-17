@@ -1,0 +1,45 @@
+@import 'styles/all.scss';
+
+.Tree {
+  display: flex;
+  flex-direction: column;
+
+  .Tree_node {
+    display: flex;
+    flex-direction: column;
+    font-size: rem(18px);
+    margin-bottom: rem(6px);
+  }
+  
+  .Tree_nodeBody {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: rem(6px);
+    border-bottom: rem(2px) dashed $color-primary-dark;
+    padding-top: rem(10px);
+    padding-bottom: rem(10px);
+  }
+
+  .Tree_nodeControls {
+    width: rem(50px);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .Tree_nodeControl {
+    // color: $color-primary-dark;
+    text-align: center;
+    border-radius: 50%;
+  }
+
+  .Tree_nodeContent {
+    background-color: #ffffff;
+    min-width: rem(100px);
+  }
+
+  .Tree_nodeChildren {
+    margin-left: rem(30px);
+  }
+}

@@ -1,0 +1,17 @@
+@use 'sass:color';
+@import '~sass-rem';
+@import '~include-media/dist/_include-media.scss';
+
+// $breakpoints: (
+//   phone: rem(320px),
+//   tablet: rem(768px),
+//   desktop: rem(1024px)
+// );
+$breakpoints: (
+  xs: 0,
+  sm: rem(576px),
+  md: rem(768px),
+  lg: rem(992px),
+  xl: rem(1200px),
+  xxl: rem(1400px)
+);

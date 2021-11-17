@@ -1,0 +1,19 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["standard", "standard-jsx", "standard-react", "plugin:testing-library/recommended"],
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "rules": {
+    "indent": ["error", 2, {
+      "offsetTernaryExpressions": false
+    }],
+    "comma-dangle": ["error", "always-multiline"],
+    "space-before-function-paren": ["error", "never"],
+    "react/jsx-uses-vars": [2]
+  },
+  "plugins": [
+    "standard", "promise", "import", "react", "testing-library"
+  ]
+}

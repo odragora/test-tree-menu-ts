@@ -1,0 +1,10 @@
+@use "sass:color";
+@import '~sass-rem';
+
+$color-primary: #c5d5cb;
+$color-primary-dark: #9fa8a3;
+$color-secondary: #e3e0cf;
+$color-error: #9E1717;
+$color-success: #3fb0ac;
+$color-blur: color.change(#F0EFEA, $alpha: 0.5);
+$shadow-color: rgba(91, 91, 91, 0.25);

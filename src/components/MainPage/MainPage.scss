@@ -1,0 +1,28 @@
+@import 'styles/all.scss';
+
+.MainPage {
+  height: 100%;
+
+  .MainPage_header {
+    font-family: $font-spartan;
+    font-weight: $font-weight-bold;
+    background-color: $color-primary-dark;
+    padding: rem(5px 10px);
+    padding-top: rem(10px);
+  }
+
+  .MainPage_tree {
+    background-color: $color-primary;
+    position: absolute;
+    top: rem(150px);
+    left: rem(100px);
+    padding: rem(20px);
+    min-width: 50%;
+    min-height: rem(400px);
+    max-height: 500px;
+    overflow-y: scroll;
+    margin-bottom: rem(100px);
+  }
+
+  .MainPage_upload {}
+}

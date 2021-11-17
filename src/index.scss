@@ -1,0 +1,18 @@
+@import 'styles/all.scss';
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background: linear-gradient(90deg, $color-secondary 50%, #ffffff 50%);
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  height: 100%;
+}

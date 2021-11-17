@@ -1,0 +1,18 @@
+@use "sass:color";
+@import '~sass-rem';
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap');
+
+$_font-spartan: 'Spartan';
+$_font-roboto: 'Roboto';
+$font-fallback: sans-serif;
+
+$font-spartan: $_font-spartan, $font-fallback;
+$font-roboto: $_font-roboto, $font-fallback;
+
+$font-title: $font-spartan;
+$font-content: $font-roboto;
+
+$font-weight-regular: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
