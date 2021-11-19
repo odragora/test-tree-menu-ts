@@ -1,5 +1,4 @@
 {
-  // "parser": "babel-eslint",
   "extends": [
     "standard-react", "standard-with-typescript",
   ],
@@ -8,9 +7,6 @@
     "jest": true,
   },
   "rules": {
-    // "indent": ["error", 2, {
-    //   "offsetTernaryExpressions": false,
-    // }],
     "comma-dangle": ["error", "always-multiline"],
     "space-before-function-paren": ["error", "never"],
     "react/jsx-uses-vars": [2],
