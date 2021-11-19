@@ -1,19 +1,39 @@
 {
-  "parser": "babel-eslint",
-  "extends": ["standard", "standard-jsx", "standard-react", "plugin:testing-library/recommended"],
+  // "parser": "babel-eslint",
+  "extends": [
+    "standard-react", "standard-with-typescript",
+  ],
   "env": {
     "browser": true,
-    "jest": true
+    "jest": true,
   },
   "rules": {
-    "indent": ["error", 2, {
-      "offsetTernaryExpressions": false
-    }],
+    // "indent": ["error", 2, {
+    //   "offsetTernaryExpressions": false,
+    // }],
     "comma-dangle": ["error", "always-multiline"],
     "space-before-function-paren": ["error", "never"],
-    "react/jsx-uses-vars": [2]
+    "react/jsx-uses-vars": [2],
+    "@typescript-eslint/no-empty-interface": "off",
+    "@typescript-eslint/space-before-function-paren": "off",
+    "@typescript-eslint/indent": ["error", 2, {
+      "offsetTernaryExpressions": false,
+    }],
+    "@typescript-eslint/member-delimiter-style": ["error", {
+      "multiline": {
+        "delimiter": "comma",
+        "requireLast": true,
+      },
+      "singleline": {
+        "delimiter": "comma",
+        "requireLast": true,
+      }
+    }],
   },
   "plugins": [
-    "standard", "promise", "import", "react", "testing-library"
-  ]
+    "standard", "promise", "import", "react", "testing-library",
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json",
+  }
 }

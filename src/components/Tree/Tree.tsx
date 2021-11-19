@@ -1,11 +1,17 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Button from 'components/Button'
+import { Node as NodeType } from 'components/MainPage'
 import { classNames } from 'utils'
 import './Tree.scss'
 
-export default class Tree extends React.Component {
-  render() {
+interface TreeProps {
+  className?: string,
+  data: NodeType[],
+}
+interface TreeState {}
+
+export default class Tree extends React.Component<TreeProps, TreeState> {
+  render(): JSX.Element {
     const { className, data } = this.props
 
     return (
@@ -20,21 +26,23 @@ export default class Tree extends React.Component {
   }
 }
 
-Tree.propTypes = {
-  className: PropTypes.string,
-  data: PropTypes.array,
+interface NodeProps {
+  title: React.ReactNode,
+}
+interface NodeState {
+  isExpanded: boolean,
 }
 
-class Node extends React.Component {
+class Node extends React.Component<NodeProps, NodeState> {
   state = {
     isExpanded: false,
   }
 
-  handleToggle = () => {
+  handleToggle = (): void => {
     this.setState(state => ({ isExpanded: !state.isExpanded }))
   }
 
-  render() {
+  render(): JSX.Element {
     const { title, children } = this.props
     const { isExpanded } = this.state
 
@@ -81,15 +89,10 @@ class Node extends React.Component {
   }
 }
 
-Node.propTypes = {
-  title: PropTypes.node.isRequired,
-  children: PropTypes.node,
-}
-
 function renderNode({
-  id, title, nodes,
-}) {
-  return nodes
+  id, title, nodes = [],
+}: NodeType): JSX.Element {
+  return nodes.length > 0
     ? (
       <Node
         key={id}
