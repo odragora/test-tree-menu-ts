@@ -2,7 +2,7 @@ import React from 'react'
 import MainPage from 'components/MainPage'
 import './App.scss'
 
-function App() {
+function App(): JSX.Element {
   return (
     <div className='App'>
       <MainPage />

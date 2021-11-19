@@ -1,8 +1,20 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { classNames, fileToJSON } from 'utils'
 import Tree from 'components/Tree'
 import './MainPage.scss'
+
+export interface Node {
+  id: number,
+  title: string,
+  nodes?: Node[],
+}
+
+interface Props {
+  className?: string,
+}
+interface State {
+  treeData: Node[],
+}
 
 const MOCK_DATA = [
   {
@@ -49,19 +61,23 @@ const MOCK_DATA = [
   },
 ]
 
-export default class MainPage extends React.Component {
-  state = {
+export default class MainPage extends React.Component<Props, State> {
+  state: State = {
     treeData: MOCK_DATA,
   }
 
-  handleFileUpload = async(e) => {
+  handleFileUpload: React.ChangeEventHandler<HTMLInputElement> = async(e) => {
+    if (e.target.files === null) {
+      return
+    }
+
     const file = e.target.files[0]
     const jsonData = await fileToJSON(file)
 
-    this.setState({ treeData: jsonData })
+    this.setState({ treeData: jsonData as Node[] })
   }
 
-  render() {
+  render(): JSX.Element {
     const { className } = this.props
     const { treeData } = this.state
 
@@ -89,8 +105,4 @@ export default class MainPage extends React.Component {
       </div>
     )
   }
-}
-
-MainPage.propTypes = {
-  className: PropTypes.string,
 }
